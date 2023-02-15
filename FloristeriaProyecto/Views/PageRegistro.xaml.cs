@@ -117,16 +117,7 @@ namespace FloristeriaProyecto.Views
             Navigation.PopModalAsync();
         }
 
-        private void TapLabelTerminosCondiciones_Tapped(object sender, EventArgs e)
-        {
-            popupTerminosCondiciones.IsVisible = true;
-           
-        }
-
-        private void BtnCerrarModal_Clicked(object sender, EventArgs e)
-        {
-            popupTerminosCondiciones.IsVisible = false;
-        }
+       
 
         private async void btnTomarFoto_Clicked(object sender, EventArgs e)
         {

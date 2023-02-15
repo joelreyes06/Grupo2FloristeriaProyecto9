@@ -10,6 +10,13 @@
     
     <ContentPage.Content>
         <StackLayout>
+
+            <StackLayout Grid.Row="0" HeightRequest="40" Margin="-20,0" Padding="20" BackgroundColor="#1C375C" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Image Source="xamarinlogo.png" Aspect="AspectFit" HeightRequest="180" WidthRequest="80" VerticalOptions="CenterAndExpand"></Image>
+            </StackLayout>
+           
+            
+
             <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" RowSpacing="15" Padding="20,0,20,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
@@ -23,65 +30,39 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
 
+
+                <Label Grid.Row="1"  Text="REGISTRARSE" Margin="0,-50,0,0" FontSize="20" FontAttributes="Bold" TextColor="#1C375C" HorizontalOptions="CenterAndExpand"></Label>
+
+
+                <StackLayout Grid.Row="2"  >
+                    <Image x:Name="Imagen" 
+                            Margin="0,-30,0,0"
+                           HeightRequest="130"
+                           WidthRequest="130"
+                           HorizontalOptions="Center"
+                       BackgroundColor="Black"/>
+                </StackLayout>
+                <Button Grid.Row="4" x:Name="btnTomarFoto" Text="Foto de Perfil" HorizontalOptions="FillAndExpand" Clicked="btnTomarFoto_Clicked" CornerRadius="30" TextColor="White" Background="#1C375C"/>
                 
-                <Path Grid.Row="0" Margin="-20,0" Data="m132.34,154.23002l209.00002,0l0,0.66666c-66.50001,28 -156.50001,72.87853 -209.00002,96.76573l0,-97.43239z"
-                      Stroke="#1C375C" Fill="#1C375C" HeightRequest="220" Aspect="Fill" ></Path>
-                <Image  Grid.Row="0" Margin="-18,-20,0,0" Source="xamarinlogo.png" Aspect="AspectFit" HeightRequest="180" WidthRequest="150" VerticalOptions="Start" HorizontalOptions="Start" ></Image>
 
+                <Entry Grid.Row="5" x:Name="txtNombre" Placeholder="Nombre" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                    <Entry Grid.Row="6" x:Name="txtApellido" Placeholder="Apellidos" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
 
-                <Label Grid.Row="1"  Text="REGISTRARSE" Margin="0,-50,0,0" FontSize="24" FontAttributes="Bold" TextColor="#1C375C" HorizontalOptions="CenterAndExpand"></Label>
-                <Label Grid.Row="2" Margin="0,-15,0,0" Text="Crea tu cuenta ¡Es gratis! solo tomara unos minutos" TextColor="#1C375C"  HorizontalOptions="CenterAndExpand"></Label>
+                
+                <Entry Grid.Row="7"  x:Name="txtDocumento" Placeholder="Identidad" Keyboard="Numeric"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <Entry Grid.Row="8"  x:Name="txtEmail" Placeholder="Correo Electronico" Keyboard="Email" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                <Entry Grid.Row="9"  x:Name="txtContrasena"  Placeholder="Password" IsPassword="True" FontAttributes="None" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <Entry Grid.Row="10"  x:Name="txtLatitud"  TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand"  IsVisible="False"/>
+                <Entry Grid.Row="11"  x:Name="txtLongitud"  TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" IsVisible="False"/>
 
+                <Button Grid.Row="12" x:Name="btnRegistrar" Text="Registrarme" BackgroundColor="#1C375C" TextColor="White" CornerRadius="20"  Clicked="BtnRegistrar_Clicked"/>
 
-                <Image x:Name="Imagen" 
-                       Margin="100,50,0,0"
-                       BackgroundColor="Black" 
-                       WidthRequest="100" 
-                       HeightRequest="100"/>
-
-
-                <Entry Grid.Row="3"  x:Name="txtNombre" Placeholder="Nombre" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-                <Entry Grid.Row="4"  x:Name="txtApellido" Placeholder="Apellidos" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-                <Entry Grid.Row="5"  x:Name="txtDocumento" Placeholder="Identidad" Keyboard="Numeric"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-                <Entry Grid.Row="6"  x:Name="txtEmail" Placeholder="Correo Electronico" Keyboard="Email" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
-                <Entry Grid.Row="7"  x:Name="txtContrasena"  Placeholder="Password" IsPassword="True" FontAttributes="None" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-                <Entry Grid.Row="8"  x:Name="txtLatitud"  TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand"  IsVisible="False"/>
-                <Entry Grid.Row="9"  x:Name="txtLongitud"  TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" IsVisible="False"/>
-
-
-                <CheckBox x:Name="chkAceptaTerminos" Grid.Row="10" Color="#1964BE" VerticalOptions="Center"></CheckBox>
-                <Label Grid.Row="10"  VerticalOptions="Center">Acepto los</Label>
-                <Label Grid.Row="10" TextColor="#1964BE" TextDecorations="Underline" VerticalOptions="Center">términos y condiciones
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer x:Name="TapLabelTerminosCondiciones" Tapped="TapLabelTerminosCondiciones_Tapped"/>
-                    </Label.GestureRecognizers>
-                </Label>
-
-         
-
-            <Button Grid.Row="11" x:Name="btnRegistrar" Text="Registrarme" BackgroundColor="#1C375C" TextColor="White" CornerRadius="20"  Clicked="BtnRegistrar_Clicked"/>
-            <Path Grid.Row="12" Margin="-20,0" Data="m333.5114,204.27502l115.48359,-59l-0.00813,123.08816c-101.06176,0.76114 -113.03789,-0.51177 -246.99185,-0.49297l131.51639,-63.59519z"
-                      Stroke="#1C375C" Fill="#1C375C" HeightRequest="143" Aspect="Fill" ></Path>
             </Grid>
             
-            <ContentView x:Name="popupTerminosCondiciones" BackgroundColor="#C0808080" Padding="10, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
-                <Frame Margin="10" Padding="10" BackgroundColor="#ffffff" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
-                    <StackLayout>
-                        <Label LineBreakMode="WordWrap">
-                            La Empresa podrá, en cualquier momento y sin necesidad de previo aviso, realizar cambios y actualizaciones de las presentes Condiciones de Uso y de la Política de Privacidad.
-                            
-                            El acceso y descarga de la aplicación es gratuito salvo en lo relativo al coste de la conexión a través de la red de telecomunicaciones suministrada por el proveedor de acceso contratado por los usuarios.Determinados servicios son exclusivos para nuestros clientes y su acceso se encuentra restringido.
-                        
-                            El Usuario reconoce y acepta que el uso de los contenidos y/o servicios ofrecidos por la presente aplicación móvil será bajo su exclusivo riesgo y/o responsabilidad. El Usuario se compromete a utilizar la presente aplicación móvil y todo su contenido y Servicios de conformidad con la ley, la moral, el orden público y las presentes Condiciones de Uso, y las Condiciones Particulares que, en su caso, le sean de aplicación.
-                        </Label>
-                        <Button HorizontalOptions="FillAndExpand" BackgroundColor="#1964BE" Opacity="1" TextColor="White" x:Name="btnCerrarModal" Clicked="BtnCerrarModal_Clicked" Text="Aceptar"></Button>
-
-                    </StackLayout>
-                </Frame>
-            </ContentView>
-
         </StackLayout>
 </ContentPage.Content>
 </ContentPage>
