@@ -1,5 +1,5 @@
 # FloristeriaProyecto
-# Grupo 2 de Proyecto 9
+# Movil II Grupo#2 Proyecto#9
 # Integrantes:
 
 - Óscar Antonio Diaz Maldonado 
