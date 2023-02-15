@@ -17,7 +17,7 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Image Grid.Row="0" Margin="0,30" Source="xamarin_logo.png" Aspect="AspectFit" HeightRequest="180" WidthRequest="80"></Image>
+            <Image Grid.Row="0" Margin="0,30" Source="florii.png" Aspect="AspectFit" HeightRequest="110" WidthRequest="80"></Image>
             <Frame Grid.Row="1" Margin="0,0,0,-40" BorderColor="#1C375C" HasShadow="True"  CornerRadius="50" HeightRequest="700">
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20,50,20,0">
                     <Grid.RowDefinitions>
@@ -29,8 +29,7 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
+                       
                     </Grid.RowDefinitions>
                     
                     <Label Grid.Row="0"  Text="BIENVENIDO" FontSize="24" FontAttributes="Bold" TextColor="#1C375C" HorizontalOptions="CenterAndExpand"></Label>
@@ -38,12 +37,12 @@
                     <Entry Grid.Row="2" Placeholder="Ingresa Correo" x:Name="txtEmail" Margin="0,20,0,0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
                     <Entry Grid.Row="3" Placeholder="Ingresa Contraseña" IsPassword="True" x:Name="txtContrasena" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Entry>
 
-                    <Button Grid.Row="4" x:Name="btnIniciarSesion" Text="Ingresar" BackgroundColor="#1C375C" TextColor="White" Clicked="BtnIniciarSesion_Clicked"  CornerRadius="20"></Button>
-                    <Button Grid.Row="5"  x:Name="btnRegistrarse" Text="Registrarse" BackgroundColor="#1C375C" TextColor="White" Clicked="BtnRegistrarse_Clicked" CornerRadius="20"></Button>
+                    <Button Grid.Row="5" x:Name="btnIniciarSesion" Text="Ingresar" BackgroundColor="#1C375C" TextColor="White" Clicked="BtnIniciarSesion_Clicked"  CornerRadius="20"></Button>
+                    <Button Grid.Row="6"  x:Name="btnRegistrarse" Text="Registrarse" BackgroundColor="#1C375C" TextColor="White" Clicked="BtnRegistrarse_Clicked" CornerRadius="20"></Button>
 
 
 
-                    <StackLayout Grid.Row="6" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="40">
+                    <StackLayout Grid.Row="7" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="40">
                         <Image Source="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo626DNKJxdHM-VNRD0m7x_8Jim-r9kRalJQ" WidthRequest="30"
                                HeightRequest="30" Aspect="AspectFit"></Image>
 
@@ -52,7 +51,7 @@
                     </StackLayout>
 
 
-                    <Label  Grid.Row="7" Margin="0,-10,0,0" Text="¿Olvidaste Tu Contraseña?" 
+                    <Label  Grid.Row="8" Margin="0,-10,0,0" Text="¿Olvidaste Tu Contraseña?" 
                                        FontAttributes="Bold"
                                        HorizontalOptions="CenterAndExpand">
 

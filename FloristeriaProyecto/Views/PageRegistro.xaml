@@ -12,7 +12,7 @@
         <StackLayout>
 
             <StackLayout Grid.Row="0" HeightRequest="40" Margin="-20,0" Padding="20" BackgroundColor="#1C375C" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <Image Source="xamarinlogo.png" Aspect="AspectFit" HeightRequest="180" WidthRequest="80" VerticalOptions="CenterAndExpand"></Image>
+                <Image Source="florii.png" Aspect="AspectFit" HeightRequest="100" WidthRequest="80" VerticalOptions="CenterAndExpand"></Image>
             </StackLayout>
            
             
@@ -35,16 +35,17 @@
                 </Grid.RowDefinitions>
 
 
-                <Label Grid.Row="1"  Text="REGISTRARSE" Margin="0,-50,0,0" FontSize="20" FontAttributes="Bold" TextColor="#1C375C" HorizontalOptions="CenterAndExpand"></Label>
+                <Label Grid.Row="1"  Text="REGISTRARSE" Margin="0,-48,0,0" FontSize="20" FontAttributes="Bold" TextColor="#1C375C" HorizontalOptions="CenterAndExpand"></Label>
+                <Label Grid.Row="2" Margin="0,-37,0,0" Text="Crea tu cuenta ¡Es gratis! solo tomara unos minutos" TextColor="#1C375C"  HorizontalOptions="CenterAndExpand"></Label>
 
 
-                <StackLayout Grid.Row="2"  >
+                <StackLayout Grid.Row="3"  >
                     <Image x:Name="Imagen" 
-                            Margin="0,-30,0,0"
+                            Margin="0,-20,0,0"
                            HeightRequest="130"
                            WidthRequest="130"
                            HorizontalOptions="Center"
-                       BackgroundColor="Black"/>
+                       BackgroundColor="LightGray"/>
                 </StackLayout>
                 <Button Grid.Row="4" x:Name="btnTomarFoto" Text="Foto de Perfil" HorizontalOptions="FillAndExpand" Clicked="btnTomarFoto_Clicked" CornerRadius="30" TextColor="White" Background="#1C375C"/>
                 
