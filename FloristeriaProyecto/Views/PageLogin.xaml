@@ -6,7 +6,8 @@
              mc:Ignorable="d"
              Shell.NavBarIsVisible="False"
              NavigationPage.HasNavigationBar="False"
-             BackgroundColor="#1C375C"
+            
+             BackgroundImageSource="rosa.png"
              x:Class="FloristeriaProyecto.Views.PageLogin">
 
 
