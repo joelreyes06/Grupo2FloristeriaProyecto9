@@ -2,43 +2,68 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               xmlns:views="clr-namespace:FloristeriaProyecto.Views"
+                BackgroundColor="#B90068"
+       
              x:Class="FloristeriaProyecto.Views.PageInicio">
-    
-    <Shell.Resources>
-        <ResourceDictionary>
-            <Color x:Key="ThemeColor">#530100</Color>
-            <Color x:Key="GrayColor">Gray</Color>
-            <Color x:Key="BgColor">#F0F0F0</Color>
-            <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.TitleColor" Value="{StaticResource ThemeColor}" />
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource BgColor}" />
-                <Setter Property="Shell.ForegroundColor" Value="{StaticResource ThemeColor}" />
 
-                <Setter Property="Shell.UnselectedColor" Value="{StaticResource GrayColor}" />
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="#FFCBE9"
+                  HeightRequest="150">
+                <Image Aspect="AspectFit"
+                       Source="flori.png"
+                       />
+                
+                <Label Text=""
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
 
-
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource BgColor}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource ThemeColor}" />
-                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource ThemeColor}" />
-                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource GrayColor}" />
-            </Style>
-            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}"/>
-        </ResourceDictionary>
-
-    </Shell.Resources>
-
-    <TabBar>
-        <Tab Title="Explorar" Icon="explorar.png">
-            <ShellContent ContentTemplate="{DataTemplate views:PageExplorar}"/>
+    <FlyoutItem Title="Productos"
+                Icon="ramo2.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:PageExplorar}" />
         </Tab>
-        <Tab Title="Bolsa" Icon="bolsa.png">
-            <ShellContent Title="Bolsa" ContentTemplate="{DataTemplate views:PageBolsa}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Compra"
+                Icon="compraa.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:PageBolsa}" />
         </Tab>
-        <Tab Title="Compras" Icon="pay.png">
-            <ShellContent ContentTemplate="{DataTemplate views:PageCompras}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Facturacion"
+                Icon="pagoo.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:PageCompras}" />
         </Tab>
-        <Tab Title="Mi Perfil" Icon="perfil.png">
-            <ShellContent ContentTemplate="{DataTemplate views:PagePerfil}"/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Perfil"
+                Icon="per.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:PagePerfil}" />
         </Tab>
-    </TabBar>
+    </FlyoutItem>
+
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <StackLayout>
+                <Label Text="Floristeria 2023"
+                       TextColor="#E2DCDC"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+
+                <Label Text="copyright © Grupo2"
+                       TextColor="#E2DCDC"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
 </Shell>

@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:custom="clr-namespace:FloristeriaProyecto"
              Shell.NavBarIsVisible="False"
              NavigationPage.HasNavigationBar="False"
-            
-             BackgroundImageSource="rosa.jpg"
+             
+             BackgroundColor="#FFCBE9"
              x:Class="FloristeriaProyecto.Views.PageLogin">
 
 
@@ -15,7 +15,7 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Image Grid.Row="0" Margin="0,30" Source="florii.png" Aspect="AspectFit" HeightRequest="110" WidthRequest="80"></Image>
+            <Image Grid.Row="0" Margin="0,30" Source="flori.png" Aspect="AspectFit" HeightRequest="110" WidthRequest="80"></Image>
             <Frame Grid.Row="1" Margin="0,-30,0,-0.1" BorderColor="#B90068" HasShadow="True"  CornerRadius="40" HeightRequest="600">
                 <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" RowSpacing="20" Padding="20,50,20,0">
                     <Grid.RowDefinitions>
@@ -62,6 +62,7 @@
                              HeightRequest="40"  
                              Placeholder="Ingresa Contraseña"  
                              PlaceholderColor="#E2DCDC"  
+                                IsPassword="True"
                              TextColor="#B90068"  
                              FontAttributes="None"  
                              WidthRequest="100"/>

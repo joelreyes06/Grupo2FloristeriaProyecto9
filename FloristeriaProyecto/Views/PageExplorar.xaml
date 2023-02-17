@@ -2,26 +2,63 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FloristeriaProyecto.Views.PageExplorar"
-             Title="Explorar Categorias">
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="bolsa.png" Priority="0" Order="Primary" Clicked="TbiCarrito_Clicked" />
-    </ContentPage.ToolbarItems>-->
-    <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="ListViewCategorias" ItemsSource="{Binding oListaCategoria}" HasUnevenRows="True" IsPullToRefreshEnabled="False" ItemTapped="ListViewCategorias_ItemTapped" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start" HeightRequest="270" RowSpacing="6">
-                                <Image Source="{Binding imagen}" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Image>
-                                <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#860000" Opacity="0.5">
-                                    <Label Text="{Binding nombre}" Margin="10" TextColor="White" FontSize="35"/>
-                                </StackLayout>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+          
+             x:Name="currentPage">
+
+    <StackLayout>
+        <Label Text="CONOCE NUESTROS PRODUCTOS"  Margin="40" FontSize="30" FontAttributes="Bold" TextColor="#B90068" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"></Label>
+        <CarouselView x:Name="CarouselViewCategorias" ItemsSource="{Binding oListaCategoria}" IndicatorView="CarouselViewIndicator">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    
+                    <StackLayout>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding CarouselItemTapped, Source={x:Reference currentPage}}" CommandParameter="{Binding .}"/>
+                        </StackLayout.GestureRecognizers>
+                        
+                        <Frame HasShadow="True"
+                               BorderColor="#B90068"
+                               CornerRadius="5"
+                               Margin="20"
+                               HeightRequest="340"
+                               HorizontalOptions="Center"
+                               VerticalOptions="CenterAndExpand">
+                            <StackLayout>
+
+                                <Label Text="{Binding nombre}"
+                                       FontAttributes="Bold"
+                                       FontSize="Large"
+                                       HorizontalOptions="Center"
+                                       Margin="0,0,0,10"
+                                       VerticalOptions="Center" />
+
+                                <Image Source="{Binding imagen}"
+                                       Aspect="AspectFill"
+                                       HeightRequest="200"
+                                       WidthRequest="200"
+                                       HorizontalOptions="Center" />
+
+                                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="25"/>
+
+                                <Label Text="{Binding nombre}"
+                                       FontAttributes="Italic"
+                                       HorizontalOptions="Center"
+                                       MaxLines="5"
+                                       LineBreakMode="TailTruncation" />
+
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <IndicatorView x:Name="CarouselViewIndicator" 
+                       IndicatorColor="LightGray"
+                       SelectedIndicatorColor="DarkGray"
+                       HorizontalOptions="Center"
+                        IndicatorSize="8"
+                       Margin="0,20"/>
+    </StackLayout>
+
 </ContentPage>

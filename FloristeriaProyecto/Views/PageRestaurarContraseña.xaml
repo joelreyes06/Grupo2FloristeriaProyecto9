@@ -11,21 +11,13 @@
         <Grid>
             <StackLayout  Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
 
-                <Image Source="florii.png" Aspect="AspectFill" Margin="0"/>
+                <Image Source="flori.png" Aspect="AspectFill" Margin="40"/>
             </StackLayout>
             <StackLayout Padding="0" Margin="10,140,10,0" HorizontalOptions="FillAndExpand">
                 <Frame  BackgroundColor="white" BorderColor="#B90068" HeightRequest="600" HasShadow="True" Padding="0" Margin="0" CornerRadius="50" >
 
                     <StackLayout>
-
-
-                        <StackLayout Margin="10">
-                        </StackLayout>
-                        <Label></Label> <Label Text="Recuperar Contraseña"
-                   FontSize="Large"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Center"></Label>
-                        
+                       
 
                         <StackLayout Padding="0" Margin="25,10">
 

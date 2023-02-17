@@ -1,11 +1,7 @@
 ﻿using FloristeriaProyecto.Modelo;
 using FloristeriaProyecto.Service;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,10 +12,13 @@ namespace FloristeriaProyecto.Views
     {
 
         public List<Categoria> oListaCategoria = new List<Categoria>();
+        public ICommand CarouselItemTapped{ get; set; }
+
         public PageExplorar()
         {
             InitializeComponent();
             obtenerCategorias();
+            CarouselViewCategorias_ItemTapped();
         }
 
         private async void obtenerCategorias()
@@ -44,28 +43,15 @@ namespace FloristeriaProyecto.Views
                 oListaCategoria = oListaTemp;
             }
 
-            ListViewCategorias.ItemsSource = oListaCategoria;
+            CarouselViewCategorias.ItemsSource = oListaCategoria;
         }
 
-        //private async void ListViewCategorias_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        //{
-        //    Categoria oCategoria = (Categoria)e.SelectedItem;
-        //    await Navigation.PushAsync(new PageProductos(oCategoria.idcategoria));
-        //    //await Shell.Current.Navigation.PushAsync(new PageProductos(oCategoria.idcategoria));
-
-        //}
-
-        //private async void TbiCarrito_Clicked(object sender, EventArgs e)
-        //{
-        //    //await Navigation.PushAsync(new PageBolsa());
-        //    await Shell.Current.Navigation.PushAsync(new PageBolsa());
-        //}
-
-        private async void ListViewCategorias_ItemTapped(object sender, ItemTappedEventArgs e)
+        private void CarouselViewCategorias_ItemTapped()
         {
-            Categoria oCategoria = (Categoria)e.Item;
-            await Navigation.PushAsync(new PageProductos(oCategoria.idcategoria));
+            CarouselItemTapped = new Xamarin.Forms.Command(async (selectItem) => {
+                Categoria oCategoria = (Categoria)selectItem;
+                await Navigation.PushAsync(new PageProductos(oCategoria.idcategoria));
+            });
         }
-
     }
 }
