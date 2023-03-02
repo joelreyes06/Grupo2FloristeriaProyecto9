@@ -17,7 +17,7 @@
                        HorizontalOptions="Center"
                        VerticalOptions="Center"
                        FontSize="20"
-                       TextColor="#2D90F9"
+                       TextColor="#B90068"
                        FontAttributes="Bold"/>
             
             </Grid>

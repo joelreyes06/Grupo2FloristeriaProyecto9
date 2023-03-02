@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FloristeriaProyecto.Views.PageDespacho">
+             x:Class="FloristeriaProyecto.Views.PageDespacho"
+             Title="Confirmacion de Datos">
     <ContentPage.Content>
         <StackLayout>
             <ContentView x:Name="ContentRetiro" IsVisible="False" AbsoluteLayout.LayoutFlags="All">
                 <StackLayout>
                     <SearchBar HeightRequest="35" x:Name="SearchTiendas" Placeholder="Buscar" CancelButtonColor="#9C2424" PlaceholderColor="Black" HorizontalTextAlignment="Start" TextChanged="SearchTiendas_TextChanged"></SearchBar>
                     <StackLayout Padding="5" BackgroundColor="#ffffff">
-                        <Label TextColor="#9C2424" VerticalOptions="Center" HorizontalOptions="Center">Seleccione la tienda más cerca para usted</Label>
+                        <Label TextColor="#B90068" VerticalOptions="Center" HorizontalOptions="Center">Seleccione la tienda más cerca para usted</Label>
                     </StackLayout>
                     <ListView x:Name="ListViewTiendas" ItemsSource="{Binding oListaTienda}" HasUnevenRows="True" IsPullToRefreshEnabled="False" ItemTapped="ListViewTiendas_ItemTapped" >
                         <ListView.ItemTemplate>
@@ -53,17 +54,17 @@
                         </Grid.ColumnDefinitions>
 
                         <StackLayout Grid.Column="0" Grid.Row="0" Margin="0,10" Padding="0,0,0,30">
-                            <Label TextColor="#1964BE" Text="COMPLETE SUS DATOS" FontSize="20"  HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label TextColor="#B90068" Text="COMPLETE SUS DATOS" FontSize="20"  HorizontalOptions="Center" VerticalOptions="Center"/>
                         </StackLayout>
 
                         <StackLayout Grid.Column="0" Grid.Row="1" Orientation="Vertical" HorizontalOptions="Fill" Spacing="0" Padding="0,0,0,30">
                             <Label FontAttributes="Bold" TextColor="Black">Nombre persona contacto:</Label>
-                            <Entry x:Name="txtPersonaContacto" TextColor="Black" Placeholder="Ejemplo: Maria"/>
+                            <Entry x:Name="txtPersonaContacto" TextColor="Black" Placeholder=""/>
                         </StackLayout>
 
                         <StackLayout Grid.Column="0" Grid.Row="2" Orientation="Vertical" HorizontalOptions="Fill" Spacing="0" Padding="0,0,0,30">
                             <Label FontAttributes="Bold" TextColor="Black">Dirección:</Label>
-                            <Entry x:Name="txtDireccion" TextColor="Black" Placeholder="Ejem:avenida, barrio, colonia."/>
+                            <Entry x:Name="txtDireccion" TextColor="Black" Placeholder=""/>
                         </StackLayout>
 
                         <StackLayout Grid.Column="0" Grid.Row="3" Orientation="Vertical" HorizontalOptions="Fill" Padding="0,0,0,30">
@@ -73,10 +74,10 @@
 
                         <StackLayout Grid.Column="0" Grid.Row="6" Orientation="Vertical" HorizontalOptions="Fill" Padding="0,0,0,30">
                             <Label FontAttributes="Bold" TextColor="Black" >Celular:</Label>
-                            <Entry x:Name="txtCelular" TextColor="Black" Placeholder="Ejem: 96857845" Keyboard="Numeric"/>
+                            <Entry x:Name="txtCelular" TextColor="Black" Placeholder="" Keyboard="Numeric"/>
                         </StackLayout>
 
-                        <Button Grid.Column="0" Grid.Row="7" x:Name="btnContinuar" Text="Continuar" BackgroundColor="#1964BE" CornerRadius="30" TextColor="White" Clicked="BtnContinuar_Clicked"/>
+                        <Button Grid.Column="0" Grid.Row="7" x:Name="btnContinuar" Text="Continuar" BackgroundColor="#B90068" CornerRadius="30" TextColor="White" Clicked="BtnContinuar_Clicked"/>
 
                         
 

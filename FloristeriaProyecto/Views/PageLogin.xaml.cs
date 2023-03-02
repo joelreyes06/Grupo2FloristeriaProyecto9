@@ -25,7 +25,7 @@ namespace FloristeriaProyecto.Views
         {
             if (txtContrasena.Text.Trim().Equals("") || txtEmail.Text.Trim().Equals(""))
             {
-                await DisplayAlert("Oops", "Ingrese todos los datos", "Aceptar");
+                await DisplayAlert("Error", "Ingrese todos los datos", "Aceptar");
                 return;
             }
 
@@ -44,7 +44,7 @@ namespace FloristeriaProyecto.Views
             }
             else
             {
-                await DisplayAlert("Oops", "Usuario no encontrado", "OK");
+                await DisplayAlert("Error", "Usuario o Password incorrectos", "OK");
 
 
             }

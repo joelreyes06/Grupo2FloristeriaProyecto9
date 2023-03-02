@@ -4,7 +4,7 @@
              xmlns:fRating="clr-namespace:Rating;assembly=Rating"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              x:Class="FloristeriaProyecto.Views.PageCompras"
-             Title="Mis Compras/Puedes calificar si lo deseas">
+             Title="Entregas/Calificar">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#A7A7A7">
             <ListView x:Name="ListViewCompra" ItemsSource="{Binding oListaCompra}" HasUnevenRows="True" IsPullToRefreshEnabled="False" >
@@ -40,9 +40,9 @@
 
                                     <BoxView Grid.Row="4" Grid.ColumnSpan="3" Color="Gray" HeightRequest="2" HorizontalOptions="Fill" />
 
-                                    <Label Grid.Row="5" Grid.Column="0" Text="Nombre" VerticalOptions="Start" TextColor="#9C2424"/>
-                                    <Label Grid.Row="5" Grid.Column="1" Text="Monto" VerticalOptions="Start" TextColor="#9C2424"/>
-                                    <Label Grid.Row="5" Grid.Column="2" Text="Cantidad" VerticalOptions="Start" TextColor="#9C2424"/>
+                                    <Label Grid.Row="5" Grid.Column="0" Text="Nombre" VerticalOptions="Start" TextColor="#B90068"/>
+                                    <Label Grid.Row="5" Grid.Column="1" Text="Monto" VerticalOptions="Start" TextColor="#B90068"/>
+                                    <Label Grid.Row="5" Grid.Column="2" Text="Cantidad" VerticalOptions="Start" TextColor="#B90068"/>
 
                                     <StackLayout Grid.Row="6" Grid.ColumnSpan="3" Margin="0" Padding="0">
                                         <ScrollView>

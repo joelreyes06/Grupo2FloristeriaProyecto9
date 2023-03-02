@@ -23,7 +23,7 @@
         <Button 
                 HorizontalOptions="CenterAndExpand"
                 Text="Enviar" 
-                BackgroundColor="DeepSkyBlue"
+                BackgroundColor="#B90068"
                 x:Name="btnenviar"
                 Clicked="btnenviar_Clicked"
                 CornerRadius="30"
