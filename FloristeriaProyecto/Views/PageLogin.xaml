@@ -68,14 +68,24 @@
                              WidthRequest="100"/>
 
 
+                    <StackLayout Grid.Row="5">
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox x:Name="checkBox" CheckedChanged="checkBox_CheckedChanged"/>
+                            <Label Text="Recordar Contraseña" TextColor="#B90068"/>
+                        </StackLayout>
+                        
+
+                    </StackLayout>
                     
-                    
-                  
-                    <Button Grid.Row="5" x:Name="btnIniciarSesion" Text="Ingresar" BackgroundColor="#B90068" TextColor="#F5F5F5" Clicked="BtnIniciarSesion_Clicked"  CornerRadius="20"></Button>
-                    <Button Grid.Row="6"  x:Name="btnRegistrarse" Text="Registrarse" BackgroundColor="#B90068" TextColor="#F5F5F5" Clicked="BtnRegistrarse_Clicked" CornerRadius="20"></Button>
 
 
-                    <Label  Grid.Row="7" Margin="0,-10,0,0" Text="¿Olvidaste Tu Contraseña?" 
+
+
+                    <Button Grid.Row="6" x:Name="btnIniciarSesion" Text="Ingresar" BackgroundColor="#B90068" TextColor="#F5F5F5" Clicked="BtnIniciarSesion_Clicked"  CornerRadius="20"></Button>
+                    <Button Grid.Row="7"  x:Name="btnRegistrarse" Text="Registrarse" BackgroundColor="#B90068" TextColor="#F5F5F5" Clicked="BtnRegistrarse_Clicked" CornerRadius="20"></Button>
+
+
+                    <Label  Grid.Row="8" Margin="0,-10,0,0" Text="¿Olvidaste Tu Contraseña?" 
                                        FontAttributes="Bold"
                             TextColor="#B90068"
                                        HorizontalOptions="CenterAndExpand">
