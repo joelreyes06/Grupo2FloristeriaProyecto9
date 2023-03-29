@@ -78,19 +78,10 @@
                         </StackLayout>
 
                         <Button Grid.Column="0" Grid.Row="7" x:Name="btnContinuar" Text="Continuar" BackgroundColor="#B90068" CornerRadius="30" TextColor="White" Clicked="BtnContinuar_Clicked"/>
-
-                        
-
                     </Grid>
                 </ScrollView>
 
             </ContentView>
-
-            
-
-
-
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

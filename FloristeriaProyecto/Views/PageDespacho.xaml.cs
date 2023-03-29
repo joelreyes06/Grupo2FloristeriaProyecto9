@@ -16,13 +16,19 @@ namespace FloristeriaProyecto.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageDespacho : ContentPage
     {
-      //  public Ubicacion Ubicacion;
+        public Usuario Usuarios;
+
+        private double uLatitud;
+        private double uLongitud;
+
+        Usuario oGlobalUsuario;
 
         public List<Departamento> oListaDepartamento { get; set; }
         public List<Tienda> oListaTienda { get; set; }
-      //  public List<Ubicacion> oListaUbicacion { get; set; }
 
         public ObservableCollection<Bolsa> oListaGlobalBolsa = new ObservableCollection<Bolsa>();
+
+
         public PageDespacho(ObservableCollection<Bolsa> oListaBolsa, bool delivery)
         {
             InitializeComponent();
@@ -32,15 +38,16 @@ namespace FloristeriaProyecto.Views
                 obtenerDepartamento();
                 ContentDelivery.IsVisible = true;
             }
-            else 
+            else
             {
                 Title = "Retiro";
                 obtenerTiendas();
                 ContentRetiro.IsVisible = true;
-            } 
-            
+            }
+
 
             oListaGlobalBolsa = oListaBolsa;
+            obtenerUsuario();
 
         }
 
@@ -56,14 +63,26 @@ namespace FloristeriaProyecto.Views
             pickerDepartamento.ItemsSource = oListaDepartamento;
         }
 
-       
+        private async void obtenerUsuario()
+        {
+
+            oGlobalUsuario = await ApiServiceFirebase.ObtenerUsuario();
+
+            if (oGlobalUsuario != null)
+            {
+                txtPersonaContacto.Text = oGlobalUsuario.Nombres + " " + oGlobalUsuario.Apellidos;
+
+                uLatitud = oGlobalUsuario.latitud;
+                uLongitud = oGlobalUsuario.longitud;
+            }
+        }
 
         private async void Message(string title, string message)
         {
             await DisplayAlert(title, message, "OK");
         }
 
-        private async void PickerDepartamento_SelectedIndexChanged(object sender, EventArgs e)
+        private void PickerDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
             Departamento oDepartamento = (Departamento)((Picker)sender).SelectedItem;
         }
@@ -76,12 +95,12 @@ namespace FloristeriaProyecto.Views
             ListViewTiendas.ItemsSource = BusquedaResultado;
         }
 
-        //METODO QUE SE DIRIGEN AL PAGO
 
+        //METODO QUE SE DIRIGEN AL PAGO
         private async void BtnContinuar_Clicked(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtPersonaContacto.Text) || string.IsNullOrWhiteSpace(txtDireccion.Text) || string.IsNullOrWhiteSpace(txtCelular.Text) ||
-                pickerDepartamento.SelectedIndex == -1 /*|| pickerProvincia.SelectedIndex == -1 || pickerDistrito.SelectedIndex == -1*/)
+                pickerDepartamento.SelectedIndex == -1)
             {
                 await DisplayAlert("Mensaje", "Complete todos los campos", "Ok");
                 return;
@@ -92,9 +111,9 @@ namespace FloristeriaProyecto.Views
                 personaContacto = txtPersonaContacto.Text,
                 direccion = txtDireccion.Text,
                 departamento = ((Departamento)pickerDepartamento.SelectedItem).nombredepartamento,
-              //  provincia = ((Provincia)pickerProvincia.SelectedItem).nombreprovincia,
-               // distrito = ((Distrito)pickerDistrito.SelectedItem).nombredistrito,
-                celular = txtCelular.Text
+                celular = txtCelular.Text,
+                longitud = uLongitud,
+                latitud = uLatitud
             };
 
             Compra oCompra = new Compra()
@@ -104,7 +123,6 @@ namespace FloristeriaProyecto.Views
                 oListaBolsa = oListaGlobalBolsa,
                 oDepacho = oDespacho,
                 oTienda = null,
-               // oUbicacion = null
             };
 
             await Navigation.PushAsync(new PagePago(oCompra));
@@ -121,24 +139,9 @@ namespace FloristeriaProyecto.Views
                 oListaBolsa = oListaGlobalBolsa,
                 oTienda = oTienda,
                 oDepacho = null,
-              //  oUbicacion = null
             };
 
             await Navigation.PushAsync(new PagePago(oCompra));
         }
-
-        //private async void btnObtenerUbicacionDespacho2_Clicked(object sender, EventArgs e)
-        //{
-        //    await Navigation.PushAsync(new PageObteniendoUbicacion(Ubicacion));
-
-        //}
-
-        /* private async void btnContinuar2_Clicked(object sender, EventArgs e)
-         {
-             await Navigation.PushAsync(new PageMapa(Ubicacion));
-
-         }*/
-
-
     }
 }
