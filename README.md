@@ -2,7 +2,7 @@
 # Movil II Grupo#5 Proyecto#9
 # Integrantes:
 
-- Óscar Antonio Diaz Maldonado 201910110363
+- Oscar Antonio Diaz Maldonado 201910110363
 
 - Kevin Emanuel Herrera Amaya 202010010385
 
