@@ -11,134 +11,113 @@
 
     <ContentPage.Content>
         <StackLayout>
-
-            <StackLayout Grid.Row="0" HeightRequest="40" Margin="-15,0" Padding="20" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <Image Source="flori.png" Aspect="AspectFit" HeightRequest="100" WidthRequest="80" VerticalOptions="CenterAndExpand"></Image>
+            <StackLayout Grid.Row="0" 
+                         HeightRequest="40" 
+                         Margin="-15,0" 
+                         Padding="20" 
+                         HorizontalOptions="FillAndExpand" 
+                         VerticalOptions="FillAndExpand">
+                <Image Source="flori.png" 
+                       Aspect="AspectFit" 
+                       HeightRequest="100" 
+                       WidthRequest="80" 
+                       VerticalOptions="CenterAndExpand"/>
             </StackLayout>
-            <Frame Grid.Row="1" Margin="0,0,0,-47" BorderColor="#B90068" HasShadow="True"  CornerRadius="40" HeightRequest="700">
+            <Frame Grid.Row="1" 
+                   Margin="0,0,0,-47" 
+                   BorderColor="#B90068" 
+                   HasShadow="True"  
+                   CornerRadius="40" 
+                   HeightRequest="700">
+                <ScrollView>
+                    <StackLayout>
+                        <Label Text="REGISTRATE"
+                               FontSize="20" 
+                               FontAttributes="Bold" 
+                               TextColor="#B90068" HorizontalOptions="Center"/>
 
+                        <Label Text="Crea tu cuenta ¡Es gratis!" 
+                               TextColor="#1C375C"
+                               HorizontalOptions="Center"/>
 
-                <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" RowSpacing="15" Padding="20,0,20,0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
+                        <Frame Margin="25,0,25,0" CornerRadius="20">
+                            <Image x:Name="Imagen"
+                                   BackgroundColor="LightGray"
+                                   HeightRequest="130"
+                                   WidthRequest="130"/>
+                        </Frame>
 
-                    </Grid.RowDefinitions>
+                        <Button x:Name="btnTomarFoto" 
+                                Text="Foto de Perfil" 
+                                Clicked="btnTomarFoto_Clicked" 
+                                CornerRadius="30" 
+                                TextColor="#F5F5F5" 
+                                Background="#B90068"
+                                HorizontalOptions="Center"/>
 
+                        <Frame CornerRadius="20" BorderColor="AliceBlue" >
+                            <StackLayout>
+                                <Entry x:Name="txtNombre"      
+                                       HorizontalTextAlignment="Start"  
+                                       FontSize="17"   
+                                       Placeholder="Nombre"  
+                                       PlaceholderColor="#E2DCDC"  
+                                       TextColor="#B90068"  
+                                       FontAttributes="None"/>
 
-                    <Label Grid.Row="0"  Text="REGISTRATE" Margin="0,-50,0,0" FontSize="20" FontAttributes="Bold" TextColor="#B90068" HorizontalOptions="CenterAndExpand"></Label>
-                    <Label Grid.Row="1" Margin="0,-37,0,0" Text="Crea tu cuenta ¡Es gratis!" TextColor="#1C375C"  HorizontalOptions="CenterAndExpand"></Label>
+                                <Entry x:Name="txtApellido"      
+                                       HorizontalTextAlignment="Start"  
+                                       FontSize="17" 
+                                       Placeholder="Apellido"  
+                                       PlaceholderColor="#E2DCDC"  
+                                       TextColor="#B90068"  
+                                       FontAttributes="None"/>
 
+                                <Entry x:Name="txtDocumento"     
+                                       HorizontalTextAlignment="Start"  
+                                       FontSize="17"  
+                                       Placeholder="DNI"  
+                                       PlaceholderColor="#E2DCDC"  
+                                       TextColor="#B90068"  
+                                       FontAttributes="None"/>
 
-                    <StackLayout Grid.Row="2"  >
-                        <Image x:Name="Imagen" 
-                            Margin="0,-20,0,0"
-                           HeightRequest="130"
-                           WidthRequest="130"
-                           HorizontalOptions="Center"
-                       BackgroundColor="LightGray"/>
+                                <Entry x:Name="txtEmail"      
+                                       HorizontalTextAlignment="Start"  
+                                       FontSize="17" 
+                                       Placeholder="Correo"  
+                                       PlaceholderColor="#E2DCDC"  
+                                       TextColor="#B90068"  
+                                       FontAttributes="None"/>
+
+                                <Entry x:Name="txtContrasena"   
+                                       HorizontalTextAlignment="Start"  
+                                       FontSize="17"  
+                                       Placeholder="Password"  
+                                       PlaceholderColor="#E2DCDC"  
+                                       TextColor="#B90068"  
+                                       IsPassword="True"
+                                       FontAttributes="None"/>
+                            </StackLayout>
+                        </Frame>
+
+                        <Entry x:Name="txtLatitud"  
+                           TextColor="Black" 
+                           FontAttributes="None" 
+                           IsVisible="False"/>
+
+                        <Entry x:Name="txtLongitud"  
+                           TextColor="Black" 
+                           FontAttributes="None" 
+                           IsVisible="False"/>
+
+                        <Button x:Name="btnRegistrar"
+                            Text="Registrarme" 
+                            BackgroundColor="#B90068" 
+                            TextColor="#F5F5F5" 
+                            CornerRadius="20"  
+                            Clicked="BtnRegistrar_Clicked"/>
                     </StackLayout>
-                    <Button Grid.Row="3" x:Name="btnTomarFoto" Text="Foto de Perfil" HorizontalOptions="FillAndExpand" Clicked="btnTomarFoto_Clicked" CornerRadius="30" TextColor="#F5F5F5" Background="#B90068"/>
-
-
-
-                    <custom:CustomEntry  
-                             Grid.Row="4"
-                             x:Name="txtNombre"
-                             CornerRadius="18"  
-                             IsCurvedCornersEnabled="True"  
-                             BorderColor="#B90068"      
-                             HorizontalTextAlignment="Start"  
-                             FontSize="17"  
-                             HeightRequest="40" 
-                             Placeholder="Nombre"  
-                             PlaceholderColor="#E2DCDC"  
-                             TextColor="#B90068"  
-                             FontAttributes="None"  
-                             HorizontalOptions="FillAndExpand"
-                             WidthRequest="150"/>
-
-                    <custom:CustomEntry  
-                             Grid.Row="5"
-                             x:Name="txtApellido"
-                             CornerRadius="18"  
-                             IsCurvedCornersEnabled="True"  
-                             BorderColor="#B90068"      
-                             HorizontalTextAlignment="Start"  
-                             FontSize="17"  
-                             HeightRequest="40"  
-                             Placeholder="Apellido"  
-                             PlaceholderColor="#E2DCDC"  
-                             TextColor="#B90068"  
-                             FontAttributes="None"  
-                        HorizontalOptions="FillAndExpand"
-                             WidthRequest="100"/>
-
-                    <custom:CustomEntry  
-                             Grid.Row="6"
-                             x:Name="txtDocumento"
-                             CornerRadius="18"  
-                             IsCurvedCornersEnabled="True"  
-                             BorderColor="#B90068"      
-                             HorizontalTextAlignment="Start"  
-                             FontSize="17"  
-                             HeightRequest="40"  
-                             Placeholder="DNI"  
-                             PlaceholderColor="#E2DCDC"  
-                             TextColor="#B90068"  
-                             FontAttributes="None"  
-                        HorizontalOptions="FillAndExpand"
-                             WidthRequest="100"/>
-                    
-                    <custom:CustomEntry  
-                             Grid.Row="7"
-                             x:Name="txtEmail"
-                             CornerRadius="18"  
-                             IsCurvedCornersEnabled="True"  
-                             BorderColor="#B90068"      
-                             HorizontalTextAlignment="Start"  
-                             FontSize="17"  
-                             HeightRequest="40"  
-                             Placeholder="Correo"  
-                             PlaceholderColor="#E2DCDC"  
-                             TextColor="#B90068"  
-                             FontAttributes="None" 
-                        HorizontalOptions="FillAndExpand"
-                             WidthRequest="100"/>
-                    
-                    <custom:CustomEntry  
-                             Grid.Row="8"
-                             x:Name="txtContrasena"
-                             CornerRadius="18"  
-                             IsCurvedCornersEnabled="True"  
-                             BorderColor="#B90068"      
-                             HorizontalTextAlignment="Start"  
-                             FontSize="17"  
-                             HeightRequest="40"  
-                             Placeholder="Password"  
-                             PlaceholderColor="#E2DCDC"  
-                             TextColor="#B90068"  
-                             IsPassword="True"
-                             FontAttributes="None"  
-                        HorizontalOptions="FillAndExpand"
-                             WidthRequest="100"/>
-
-                    
-                    <Entry Grid.Row="9"  x:Name="txtLatitud"  TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand"  IsVisible="False"/>
-                    <Entry Grid.Row="9"  x:Name="txtLongitud"  TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" IsVisible="False"/>
-
-                    <Button Grid.Row="10" x:Name="btnRegistrar" Text="Registrarme" BackgroundColor="#B90068" TextColor="#F5F5F5" CornerRadius="20"  Clicked="BtnRegistrar_Clicked"/>
-            
-            </Grid>
+                </ScrollView>
             </Frame>
         </StackLayout>
     </ContentPage.Content>

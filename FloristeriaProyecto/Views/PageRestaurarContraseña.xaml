@@ -43,7 +43,7 @@
                                          PlaceholderColor="#E2DCDC"  
                                          TextColor="#B90068"  
                                          FontAttributes="None"  
-                                         WidthRequest="100"/>   
+                                         WidthRequest="250"/>   
 
 
                                 </StackLayout>
