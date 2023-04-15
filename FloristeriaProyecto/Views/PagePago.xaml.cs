@@ -1,5 +1,6 @@
 ﻿using FloristeriaProyecto.Modelo;
 using FloristeriaProyecto.Service;
+using Plugin.LocalNotifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,7 @@ namespace FloristeriaProyecto.Views
             {
                 await DisplayAlert("Mensaje", "Complete todos los campos", "Ok");
                 return;
+
             }
 
             DetallePago oDetallePago = new DetallePago()
@@ -56,7 +58,10 @@ namespace FloristeriaProyecto.Views
             if (respuesta)
             {
                 await DisplayAlert("Mensaje", "La compra fue realizada!", "Ok");
+                CrossLocalNotifications.Current.Show("Margaritas Floristeria", "Pago Realizado con Exito.", 0, DateTime.Now.AddSeconds(1));
+                CrossLocalNotifications.Current.Show("Margaritas Floristeria", "Su pedido esta en proceso de entrega.", 1, DateTime.Now.AddSeconds(2));
                 Application.Current.MainPage = new PageInicio();
+
             }
             else
             {

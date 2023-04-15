@@ -76,10 +76,10 @@
                                                        Grid.Row="3" Grid.Column="1"  
                                                        VerticalOptions="Center" 
                                                        x:Name="rating"                                  
-                                                       ImageWidth="20" 
-                                                       ImageHeight="20" 
-                                                       FillStarImage="EstrellaRellena"
-                                                       EmptyStarImage="EstrellaBlanca"  >
+                                                       ImageWidth="25" 
+                                                       ImageHeight="25" 
+                                                       FillStarImage="floRR"
+                                                       EmptyStarImage="floR">
 
                                     </fRating:RatingBar>
 
