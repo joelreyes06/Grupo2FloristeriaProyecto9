@@ -24,6 +24,7 @@ namespace FloristeriaProyecto.Views
         MediaFile FileFoto = null;
         public PagePerfil()
         {
+
             InitializeComponent();
             obtenerUsuario();
         }

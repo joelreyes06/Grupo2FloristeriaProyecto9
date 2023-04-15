@@ -1,5 +1,6 @@
 ﻿using FloristeriaProyecto.Modelo;
 using FloristeriaProyecto.Service;
+using Plugin.LocalNotifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,12 +52,6 @@ namespace FloristeriaProyecto.Views
 
         }
 
-        //private async void btnenviar_Clicked(object sender, EventArgs e)
-        //{
-
-        //    await Navigation.PushModalAsync(new PageCalificar());
-
-        //}
 
         private async void listSites_ItemTapped(object sender, ItemTappedEventArgs e)
         {
@@ -78,28 +73,14 @@ namespace FloristeriaProyecto.Views
             await DisplayAlert(title, message, "OK");
         }
 
-        //private void btnenviarCali_Clicked(object sender, EventArgs e)
-        //{
-        //    int Rating = rating.SelectedStarValue;
-        //    DisplayAlert("Gracias Por Calificarnos", Rating.ToString(), "Ok");
-         
-        //}
+        private void ListViewCompra_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (!Application.Current.Properties.ContainsKey("contador"))
+            {
+                Application.Current.Properties.Add("contador", 1);
 
-        //private void TapLabelTerminosCondiciones_Tapped(object sender, EventArgs e)
-        //{
-        //    popupTerminosCondiciones.IsVisible = true;
-        //}
-
-        //private void btnCerrarModal_Clicked(object sender, EventArgs e)
-        //{
-        //    popupTerminosCondiciones.IsVisible = false;
-        //    IsEnabled = true;
-        //}
-
-        //private void TapLabelTerminosCondicionesCerrar_Tapped(object sender, EventArgs e)
-        //{
-        //    popupTerminosCondiciones.IsVisible = false;
-        //    IsEnabled = true;
-        //}
+                CrossLocalNotifications.Current.Show("Floristeria Margaritas", "Tu pedido ha llegado, Que lo Disfrutes!!.", 4, DateTime.Now.AddSeconds(1));
+            }
+        }
     }
 }

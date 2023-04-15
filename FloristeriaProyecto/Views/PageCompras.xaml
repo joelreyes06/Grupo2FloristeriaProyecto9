@@ -7,7 +7,7 @@
              Title="Entregas/Calificar">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#A7A7A7">
-            <ListView x:Name="ListViewCompra" ItemsSource="{Binding oListaCompra}" HasUnevenRows="True" IsPullToRefreshEnabled="False" >
+            <ListView x:Name="ListViewCompra" ItemsSource="{Binding oListaCompra}" HasUnevenRows="True" IsPullToRefreshEnabled="False" ItemTapped="ListViewCompra_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
